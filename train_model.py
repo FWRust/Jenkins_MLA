@@ -9,7 +9,7 @@ from sklearn.model_selection import GridSearchCV
 
 if __name__ == "__main__":
     df = pd.read_csv("./df_clear.csv")
-
+    df = df.set_index("User_ID")
     scaler = StandardScaler()
     to_scale = ['Social_Media_Hours','Exercise_Hours','Sleep_Hours','Screen_Time_Hours','Wearable_Stress_Score']
     df[to_scale] = scaler.fit_transform(df[to_scale])
