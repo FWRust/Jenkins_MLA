@@ -51,6 +51,6 @@ if __name__ == "__main__":
             joblib.dump(lr, file)
 
     dfruns = mlflow.search_runs()
-    path2model = dfruns.sort_values("metrics.r2", ascending=False).iloc[0]['artifact_uri'].replace("file://","") + '/model' #путь до эксперимента с лучшей моделью
+    path2model = dfruns.sort_values("metrics.accuracy", ascending=False).iloc[0]['artifact_uri'].replace("file://","") + '/model' #путь до эксперимента с лучшей моделью
     print(path2model)
 
